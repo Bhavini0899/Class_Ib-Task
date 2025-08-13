@@ -1,0 +1,31 @@
+# 1.Check Cholesterol level (using if)
+cholesterol <- 230
+if (cholesterol > 240){print("High Cholesterol")}
+# 2.Blood Pressure Status (using if...else)
+Systolic_bp <- 130
+if (Systolic_bp < 120){print("Blood Pressure is normal")}else{print("Blood Pressure is High")}
+# 3.Automating data type conversion with for loop
+metadata <- read.csv(file.choose())
+View(metadata)
+dataset1 <- metadata
+str(metadata)
+str(dataset1)
+factor_col <- c("height", "gender")
+for(col in factor_col){dataset1[[col]] <- as.factor(dataset1[[col]])}
+str(dataset1)
+str(metadata)
+patient_info <- read.csv((file.choose()))
+View(patient_info)
+dataset2 <- patient_info
+str(patient_info)
+str(dataset2)
+factor_col1 <- c("gender", "diagnosis", "smoker")
+for(col in factor_col1){dataset2 [[col]] <- as.factor(dataset2[[col]])}
+str(patient_info)
+str(dataset2)
+# 4. Converting Factors to Numeric Codes
+binary_col <- c("smoker")
+for(col in binary_col){dataset2[[col]] <- ifelse(dataset2$smoker == "Yes", 1, 0)}
+str(patient_info)
+str(dataset2)
+
